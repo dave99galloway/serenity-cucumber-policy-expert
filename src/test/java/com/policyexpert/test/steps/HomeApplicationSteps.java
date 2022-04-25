@@ -21,6 +21,7 @@ import static com.policyexpert.test.about.AboutYou.getTitleButton;
 public class HomeApplicationSteps {
 
     private SearchableTarget occupation_field;
+    private SearchableTarget OtherOccupations;
 
     @When("{actor} opens {string} browser to the policy expert home application page")
     public void opensBrowserToThePolicyExpertHomeApplicationPage(Actor actor, String ignoredPronoun) {
@@ -71,5 +72,11 @@ public class HomeApplicationSteps {
         actor.attemptsTo(Enter.theValue(occupation).into(AboutYou.OccupationSearch));
         //todo: get list of matches and iterate over them until an exact text match is found. first match will do for now
         actor.attemptsTo(Click.on(Target.the("occupation search result option").located(By.cssSelector("ul > li"))));
+    }
+
+    @And("{actor} has selected {string} from the other occupations question")
+    public void hasSelectedFromTheOtherOccupationsQuestion(Actor actor, String otherOccupations) {
+
+        actor.attemptsTo(Click.on(AboutYou.OtherOccupations(otherOccupations)));
     }
 }
