@@ -11,7 +11,8 @@ Feature: About you
     And "<actor>" has entered "<lastname>" as "<pronoun>" last name
     And "<actor>" has entered "<dob>" as "<pronoun>" date of birth
     And "<actor>" has selected "<maritalStatus>" as "<pronoun>" marital status
+    And "<actor>" has selected "<occupation>" as "<pronoun>" occupation
 
     Examples:
-      | actor  | title | pronoun | lastname | dob        | maritalStatus |
-      | Trevor | Mr    | his     | McTrevor | 10 09 1992 | Married       |
+      | actor  | title | pronoun | lastname | dob        | maritalStatus |occupation|
+      | Trevor | Mr    | his     | McTrevor | 10 09 1992 | Married       |Journalist|

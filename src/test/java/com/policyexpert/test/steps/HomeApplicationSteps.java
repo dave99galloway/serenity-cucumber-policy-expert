@@ -10,13 +10,18 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.targets.SearchableTarget;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.ui.RadioButton;
+import org.openqa.selenium.By;
 
 import static com.policyexpert.test.about.AboutYou.getMaritalStatusButton;
 import static com.policyexpert.test.about.AboutYou.getTitleButton;
 
 public class HomeApplicationSteps {
+
+    private SearchableTarget occupation_field;
+
     @When("{actor} opens {string} browser to the policy expert home application page")
     public void opensBrowserToThePolicyExpertHomeApplicationPage(Actor actor, String ignoredPronoun) {
         actor.attemptsTo(OpenHomeApplication.page());
@@ -59,5 +64,12 @@ public class HomeApplicationSteps {
     @And("{actor} has selected {string} as {string} marital status")
     public void hasSelectedAsMaritalStatus(Actor actor, String maritalStatus, String ignoredPronoun) {
         actor.attemptsTo(Click.on(getMaritalStatusButton(maritalStatus)));
+    }
+
+    @And("{actor} has selected {string} as {string} occupation")
+    public void hasSelectedAsOccupation(Actor actor, String occupation, String ignoredPronoun) {
+        actor.attemptsTo(Enter.theValue(occupation).into(AboutYou.OccupationSearch));
+        //todo: get list of matches and iterate over them until an exact text match is found. first match will do for now
+        actor.attemptsTo(Click.on(Target.the("occupation search result option").located(By.cssSelector("ul > li"))));
     }
 }

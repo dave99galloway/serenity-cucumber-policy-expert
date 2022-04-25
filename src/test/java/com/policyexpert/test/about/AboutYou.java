@@ -12,6 +12,7 @@ public class AboutYou {
     public static final Target DobDay = Target.the("Date Of Birth Day").located(By.cssSelector("input[id='policyholder_date_of_birth.day']"));
     public static final Target DobMonth = Target.the("Date Of Birth Month").located(By.cssSelector("input[id='policyholder_date_of_birth.month']"));
     public static final Target DobYear = Target.the("Date Of Birth Year").located(By.cssSelector("input[id='policyholder_date_of_birth.year']"));
+    public static final Target OccupationSearch = Target.the("occupation field").located(By.cssSelector("input[name='occupation']"));
 
     public static SearchableTarget getTitleButton(String title) {
         return Target.the(title).located(By.cssSelector(String.format("button[aria-label='%s']", title)));
