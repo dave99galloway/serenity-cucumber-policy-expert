@@ -9,7 +9,8 @@ Feature: About you
     And "<actor>" has selected "<pronoun>" title as "<title>"
     And "<actor>" has entered "<actor>" as "<pronoun>" first name
     And "<actor>" has entered "<lastname>" as "<pronoun>" last name
+    And "<actor>" has entered "<dob>" as "<pronoun>" date of birth
 
     Examples:
-      | actor  | title |pronoun|lastname|
-      | Trevor | Mr      |his  |McTrevor|
+      | actor  | title |pronoun|lastname|dob|
+      | Trevor | Mr      |his  |McTrevor|10 09 1992|

@@ -1,5 +1,6 @@
 package com.policyexpert.test.steps;
 
+import com.policyexpert.test.DobFromString;
 import com.policyexpert.test.about.AboutYou;
 import com.policyexpert.test.navigation.OpenHomeApplication;
 import io.cucumber.java.en.And;
@@ -45,5 +46,14 @@ public class HomeApplicationSteps {
     @And("{actor} has entered {string} as {string} last name")
     public void hasEnteredAsLastName(Actor actor, String lastName, String ignoredPronoun) {
         actor.attemptsTo(Enter.theValue(lastName).into(AboutYou.LastName));
+    }
+
+    @And("{actor} has entered {string} as {string} date of birth")
+    public void hasEnteredAsDateOfBirth(Actor actor, String dob, String ignoredPronoun) {
+        DobFromString dateOfBirth = new DobFromString(dob);
+        actor.attemptsTo(Enter.theValue(dateOfBirth.getDobDay()).into(AboutYou.DobDay));
+        actor.attemptsTo(Enter.theValue(dateOfBirth.getDobMonth()).into(AboutYou.DobMonth));
+        actor.attemptsTo(Enter.theValue(dateOfBirth.getDobYear()).into(AboutYou.DobYear));
+
     }
 }
