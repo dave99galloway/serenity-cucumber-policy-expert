@@ -10,7 +10,8 @@ Feature: About you
     And "<actor>" has entered "<actor>" as "<pronoun>" first name
     And "<actor>" has entered "<lastname>" as "<pronoun>" last name
     And "<actor>" has entered "<dob>" as "<pronoun>" date of birth
+    And "<actor>" has selected "<maritalStatus>" as "<pronoun>" marital status
 
     Examples:
-      | actor  | title |pronoun|lastname|dob|
-      | Trevor | Mr      |his  |McTrevor|10 09 1992|
+      | actor  | title | pronoun | lastname | dob        | maritalStatus |
+      | Trevor | Mr    | his     | McTrevor | 10 09 1992 | Married       |

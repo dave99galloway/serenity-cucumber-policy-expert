@@ -1,6 +1,6 @@
 package com.policyexpert.test.steps;
 
-import com.policyexpert.test.DobFromString;
+import com.policyexpert.test.DateFromString;
 import com.policyexpert.test.about.AboutYou;
 import com.policyexpert.test.navigation.OpenHomeApplication;
 import io.cucumber.java.en.And;
@@ -10,10 +10,10 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.ensure.Ensure;
-import net.serenitybdd.screenplay.targets.SearchableTarget;
 import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
+import net.serenitybdd.screenplay.ui.RadioButton;
 
+import static com.policyexpert.test.about.AboutYou.getMaritalStatusButton;
 import static com.policyexpert.test.about.AboutYou.getTitleButton;
 
 public class HomeApplicationSteps {
@@ -50,10 +50,14 @@ public class HomeApplicationSteps {
 
     @And("{actor} has entered {string} as {string} date of birth")
     public void hasEnteredAsDateOfBirth(Actor actor, String dob, String ignoredPronoun) {
-        DobFromString dateOfBirth = new DobFromString(dob);
-        actor.attemptsTo(Enter.theValue(dateOfBirth.getDobDay()).into(AboutYou.DobDay));
-        actor.attemptsTo(Enter.theValue(dateOfBirth.getDobMonth()).into(AboutYou.DobMonth));
-        actor.attemptsTo(Enter.theValue(dateOfBirth.getDobYear()).into(AboutYou.DobYear));
+        DateFromString dateOfBirth = new DateFromString(dob);
+        actor.attemptsTo(Enter.theValue(dateOfBirth.getDay()).into(AboutYou.DobDay));
+        actor.attemptsTo(Enter.theValue(dateOfBirth.getMonth()).into(AboutYou.DobMonth));
+        actor.attemptsTo(Enter.theValue(dateOfBirth.getYear()).into(AboutYou.DobYear));
+    }
 
+    @And("{actor} has selected {string} as {string} marital status")
+    public void hasSelectedAsMaritalStatus(Actor actor, String maritalStatus, String ignoredPronoun) {
+        actor.attemptsTo(Click.on(getMaritalStatusButton(maritalStatus)));
     }
 }
