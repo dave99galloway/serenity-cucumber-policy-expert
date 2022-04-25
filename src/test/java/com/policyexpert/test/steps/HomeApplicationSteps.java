@@ -37,5 +37,13 @@ public class HomeApplicationSteps {
         actor.attemptsTo(Click.on(getTitleButton(title)));
     }
 
+    @And("{actor} has entered {string} as {string} first name")
+    public void hasEnteredAsFirstName(Actor actor, String firstName, String ignoredPronoun) {
+        actor.attemptsTo(Enter.theValue(firstName).into(AboutYou.FirstName));
+    }
 
+    @And("{actor} has entered {string} as {string} last name")
+    public void hasEnteredAsLastName(Actor actor, String lastName, String ignoredPronoun) {
+        actor.attemptsTo(Enter.theValue(lastName).into(AboutYou.LastName));
+    }
 }
