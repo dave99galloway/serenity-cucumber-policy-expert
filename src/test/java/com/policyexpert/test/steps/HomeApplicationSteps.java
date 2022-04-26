@@ -76,7 +76,11 @@ public class HomeApplicationSteps {
 
     @And("{actor} has selected {string} from the other occupations question")
     public void hasSelectedFromTheOtherOccupationsQuestion(Actor actor, String otherOccupations) {
-
         actor.attemptsTo(Click.on(AboutYou.OtherOccupations(otherOccupations)));
+    }
+
+    @And("{actor} has entered {string} as {string} primary phone number")
+    public void hasEnteredAsPrimaryPhoneNumber(Actor actor, String phoneNumber, String ignoredPronoun) {
+        actor.attemptsTo(Enter.theValue(phoneNumber).into(AboutYou.PrimaryPhoneNumber));
     }
 }

@@ -13,7 +13,8 @@ Feature: About you
     And "<actor>" has selected "<maritalStatus>" as "<pronoun>" marital status
     And "<actor>" has selected "<occupation>" as "<pronoun>" occupation
     And "<actor>" has selected "<otherOccupations>" from the other occupations question
+    And "<actor>" has entered "<phoneNumber>" as "<pronoun>" primary phone number
 
     Examples:
-      | actor  | title | pronoun | lastname | dob        | maritalStatus |occupation|otherOccupations|
-      | Trevor | Mr    | his     | McTrevor | 10 09 1992 | Married       |Journalist|No              |
+      | actor  | title | pronoun | lastname | dob        | maritalStatus |occupation|otherOccupations|phoneNumber|
+      | Trevor | Mr    | his     | McTrevor | 10 09 1992 | Married       |Journalist|No              |07123456789|

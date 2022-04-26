@@ -1,6 +1,7 @@
 package com.policyexpert.test;
 
 //todo: extract interface for different date formats
+//todo: create a parameter transform?
 public class DateFromString {
 
     private final String[] dateParts;
