@@ -1,10 +1,10 @@
 package com.policyexpert.test.about;
 
 import com.policyexpert.test.stringutils.DateFromString;
-import io.cucumber.datatable.DataTable;
 
 import java.util.Map;
 
+@SuppressWarnings("unused") // will need setters when overriding default data
 public class AboutYouData {
 
     public void setTitle(String title) {

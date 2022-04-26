@@ -1,20 +1,17 @@
 package com.policyexpert.test.steps;
 
-import com.policyexpert.test.about.AboutYouTasks.Submit;
-import com.policyexpert.test.stringutils.DateFromString;
 import com.policyexpert.test.about.AboutYou;
+import com.policyexpert.test.about.AboutYouData;
+import com.policyexpert.test.about.AboutYouTasks.Submit;
 import com.policyexpert.test.navigation.OpenHomeApplication;
+import com.policyexpert.test.stringutils.DateFromString;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import kotlin.jvm.functions.Function1;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.actions.*;
-import net.serenitybdd.screenplay.ensure.Ensure;
-import com.policyexpert.test.about.AboutYouData;
-import net.serenitybdd.screenplay.ensure.PerformableExpectation;
-import org.jetbrains.annotations.NotNull;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
 
 import static com.policyexpert.test.about.AboutYou.*;
 import static com.policyexpert.test.about.OtherResidents.CheckTheyAreOnTheOtherResidentsPage;
