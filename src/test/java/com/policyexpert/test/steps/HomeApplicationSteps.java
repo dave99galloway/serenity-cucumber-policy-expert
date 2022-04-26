@@ -93,5 +93,9 @@ public class HomeApplicationSteps {
         actor.attemptsTo(Click.on(AboutYou.Next));
     }
 
-
+    @Then("{actor} is redirected to the other residents page")
+    public void isRedirectedToTheOtherResidentsPage(Actor actor) {
+        //todo: the selector for the headings is exactly the same on page 1 & 2 so some synchronisation may be needed to wait for the state change
+        actor.attemptsTo(Ensure.that(AboutYou.HEADING).hasText("2. About you and other residents"));
+    }
 }

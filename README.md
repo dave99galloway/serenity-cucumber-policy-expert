@@ -8,6 +8,7 @@ This demo was created using ([https://github.com/serenity-bdd/serenity-cucumber-
 Recommended, use IntelliJ and the cucumber java plugin to create a run configuration using cucumber. 
 
 examples are included in ideaConfigurations/
+- cucumberBasicInfoScenario/Scenario_ User can provide basic information (Compact).run.xml - runs a compact version of the basic info scenario WITH an assertion
 - cucumberBasicInfoScenario/Scenario_ User can provide basic information.run.xml - runs a single scenario using the Serenity Cucumber runner
 - gradleBuildAndRunAll/serenity-cucumber-policy-expert [build].run.xml - builds and runs the whole project and runs all tests
 
