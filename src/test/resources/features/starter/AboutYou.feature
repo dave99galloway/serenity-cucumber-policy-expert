@@ -14,7 +14,8 @@ Feature: About you
     And "<actor>" has selected "<occupation>" as "<pronoun>" occupation
     And "<actor>" has selected "<otherOccupations>" from the other occupations question
     And "<actor>" has entered "<phoneNumber>" as "<pronoun>" primary phone number
+    And "<actor>" has entered "<email>" as "<pronoun>" email address
 
     Examples:
-      | actor  | title | pronoun | lastname | dob        | maritalStatus |occupation|otherOccupations|phoneNumber|
-      | Trevor | Mr    | his     | McTrevor | 10 09 1992 | Married       |Journalist|No              |07123456789|
+      | actor  | title | pronoun | lastname | dob        | maritalStatus |occupation|otherOccupations|phoneNumber|email|
+      | Trevor | Mr    | his     | McTrevor | 10 09 1992 | Married       |Journalist|No              |07123456789|vketipisz@qmetric.co.uk|

@@ -82,4 +82,10 @@ public class HomeApplicationSteps {
     public void hasEnteredAsPrimaryPhoneNumber(Actor actor, String phoneNumber, String ignoredPronoun) {
         actor.attemptsTo(Enter.theValue(phoneNumber).into(AboutYou.PrimaryPhoneNumber));
     }
+
+    @And("{actor} has entered {string} as {string} email address")
+    public void hasEnteredAsEmailAddress(Actor actor, String email, String ignoredPronoun) {
+        actor.attemptsTo(Enter.theValue(email).into(AboutYou.CustomerEmail));
+
+    }
 }

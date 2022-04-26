@@ -15,6 +15,15 @@ The test results will be recorded in the `target/site/serenity` directory. If yo
 
 `target/site/serenity/index.html`
 
+- note there appears to be a slight bug navigating to individual results from the index page using the links in the table :
+```
+Functional Coverage Details
+  Features
+  Feature	Test Cases	Scenarios	% Pass	Result	Coverage
+  About you
+  ```
+instead navigate to individual results using the link (amend the port number in the link if needed) [Test Results](http://localhost:63343/serenity-cucumber-policy-expert/target/site/serenity/index.html#tests) until this bug is resolved
+and use the links to the scenarios rather than the features
 if you ran a single scenario look for a single html file e.g. `target/site/serenity/05685605cc5b88bc20123ee62bf1f25ffcf19e6d9349352a0b321b4111bd55bc.html`
 
 ## troubleshooting

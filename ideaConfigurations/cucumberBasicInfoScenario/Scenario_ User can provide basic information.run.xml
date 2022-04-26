@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Scenario: User can provide basic information" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" nameIsGenerated="true">
     <option name="CUCUMBER_CORE_VERSION" value="5" />
-    <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/homepage/AboutYou.feature" />
+    <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/starter/AboutYou.feature" />
     <option name="GLUE" value="net.serenitybdd.cucumber.actors com.policyexpert.test.steps starter.stepdefinitions" />
     <option name="MAIN_CLASS_NAME" value="net.serenitybdd.cucumber.integration.intellij.CucumberWithSerenityRuntimeMain" />
     <module name="serenity-cucumber-policy-expert.test" />
