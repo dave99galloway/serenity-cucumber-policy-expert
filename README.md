@@ -26,6 +26,16 @@ instead navigate to individual results using the link (amend the port number in 
 and use the links to the scenarios rather than the features
 if you ran a single scenario look for a single html file e.g. `target/site/serenity/05685605cc5b88bc20123ee62bf1f25ffcf19e6d9349352a0b321b4111bd55bc.html`
 
+## disabling headless mode
+
+the tests run headless by default. if you want to see them running change
+
+```serenity.conf:5
+headless.mode = false
+```
+
+also to make the reports more intersting, you can enable BEFORE_AND_AFTER_EACH_STEP as the take.screenshots value (although this does impact execution speed)
+
 ## troubleshooting
 
 older versions of the JRE (e.g. 1.8.0_282*) do not work, most likely due to an incompatibility with CGLIB. If you see an error like this :-

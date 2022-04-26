@@ -1,5 +1,6 @@
 package com.policyexpert.test.steps;
 
+import com.policyexpert.test.about.AboutYouTasks.Submit;
 import com.policyexpert.test.stringutils.DateFromString;
 import com.policyexpert.test.about.AboutYou;
 import com.policyexpert.test.navigation.OpenHomeApplication;
@@ -10,17 +11,11 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.ensure.Ensure;
-import net.serenitybdd.screenplay.targets.SearchableTarget;
-import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
+import com.policyexpert.test.about.AboutYouData;
 
-import static com.policyexpert.test.about.AboutYou.getMaritalStatusButton;
-import static com.policyexpert.test.about.AboutYou.getTitleButton;
+import static com.policyexpert.test.about.AboutYou.*;
 
 public class HomeApplicationSteps {
-
-    private SearchableTarget occupation_field;
-    private SearchableTarget OtherOccupations;
 
     @When("{actor} opens {string} browser to the policy expert home application page")
     public void opensBrowserToThePolicyExpertHomeApplicationPage(Actor actor, String ignoredPronoun) {
@@ -35,6 +30,11 @@ public class HomeApplicationSteps {
     @Given("{actor} is on the About You form")
     public void isOnTheAboutYouForm(Actor actor) {
         actor.attemptsTo(OpenHomeApplication.page(),Ensure.that(AboutYou.HEADING).hasText("1. About you"));
+    }
+
+    @When("{actor} enters this data in the About You form:-")
+    public void entersThisDataInTheAboutYouForm(Actor actor, AboutYouData data) {
+        actor.attemptsTo(Submit.AboutYouData(data));
     }
 
     @And("{actor} has selected {string} title as {string}")
@@ -69,8 +69,7 @@ public class HomeApplicationSteps {
     @And("{actor} has selected {string} as {string} occupation")
     public void hasSelectedAsOccupation(Actor actor, String occupation, String ignoredPronoun) {
         actor.attemptsTo(Enter.theValue(occupation).into(AboutYou.OccupationSearch));
-        //todo: get list of matches and iterate over them until an exact text match is found. first match will do for now
-        actor.attemptsTo(Click.on(Target.the("occupation search result option").located(By.cssSelector("ul > li"))));
+        actor.attemptsTo(Click.on(OCCUPATION_SEARCH_RESULT_OPTION));
     }
 
     @And("{actor} has selected {string} from the other occupations question")
@@ -93,4 +92,6 @@ public class HomeApplicationSteps {
     public void clicksTheNextButtonOnTheAboutYouForm(Actor actor) {
         actor.attemptsTo(Click.on(AboutYou.Next));
     }
+
+
 }

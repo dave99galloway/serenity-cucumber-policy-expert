@@ -17,6 +17,10 @@ public class AboutYou {
     public static final Target CustomerEmail = Target.the("What is your e-mail address? field").located(By.cssSelector("input#customer_email"));
     public static final Target Next = Target.the("Next button").located(By.cssSelector("div[class^='Sectionstyle__NavigationForward'] button[class^='styled__PrimaryButton']"));
 
+    public static final Target OCCUPATION_SEARCH_RESULT_OPTION =
+            //todo: get list of matches and iterate over them until an exact text match is found. first match will do for now
+            Target.the("occupation search result option").located(By.cssSelector("ul > li"));
+
     public static SearchableTarget getTitleButton(String title) {
         return Target.the(title).located(By.cssSelector(String.format("button[aria-label='%s']", title)));
     }

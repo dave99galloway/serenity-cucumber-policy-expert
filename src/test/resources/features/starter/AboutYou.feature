@@ -3,6 +3,19 @@ Feature: About you
   As a Policy Expert actuary
   I want users to provide their details
 
+  Scenario Outline: User can provide basic information (Compact)
+    Given "<actor>" is on the About You form
+    When "<actor>" enters this data in the About You form:-
+    #prefer to use a vertical table for readability but this is quicker to set up
+      | title   | pronoun   |firstname| lastname   | dob   | maritalStatus   | occupation   | otherOccupations   | phoneNumber   | email   |
+      | <title> | <pronoun> |<firstname>| <lastname> | <dob> | <maritalStatus> | <occupation> | <otherOccupations> | <phoneNumber> | <email> |
+
+
+    Examples:
+      | actor  | title | pronoun |firstname| lastname | dob        | maritalStatus | occupation | otherOccupations | phoneNumber | email                   |
+      | Trevor | Mr    | his     |Trevor   | McTrevor | 10 09 1992 | Married       | Journalist | No               | 07123456789 | vketipisz@qmetric.co.uk |
+
+@Ignore
   Scenario Outline: User can provide basic information
     # really don't do this as a final test, but useful to get started
     Given "<actor>" is on the About You form
@@ -18,5 +31,5 @@ Feature: About you
     And "<actor>" clicks the Next button on the About You form
 
     Examples:
-      | actor  | title | pronoun | lastname | dob        | maritalStatus |occupation|otherOccupations|phoneNumber|email|
-      | Trevor | Mr    | his     | McTrevor | 10 09 1992 | Married       |Journalist|No              |07123456789|vketipisz@qmetric.co.uk|
+      | actor  | title | pronoun | lastname | dob        | maritalStatus | occupation | otherOccupations | phoneNumber | email                   |
+      | Trevor | Mr    | his     | McTrevor | 10 09 1992 | Married       | Journalist | No               | 07123456789 | vketipisz@qmetric.co.uk |
