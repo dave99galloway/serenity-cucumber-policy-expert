@@ -1,6 +1,6 @@
 package com.policyexpert.test.steps;
 
-import com.policyexpert.test.DateFromString;
+import com.policyexpert.test.stringutils.DateFromString;
 import com.policyexpert.test.about.AboutYou;
 import com.policyexpert.test.navigation.OpenHomeApplication;
 import io.cucumber.java.en.And;
@@ -12,7 +12,6 @@ import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.targets.SearchableTarget;
 import net.serenitybdd.screenplay.targets.Target;
-import net.serenitybdd.screenplay.ui.RadioButton;
 import org.openqa.selenium.By;
 
 import static com.policyexpert.test.about.AboutYou.getMaritalStatusButton;
