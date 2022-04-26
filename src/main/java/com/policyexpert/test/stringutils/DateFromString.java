@@ -1,4 +1,4 @@
-package com.policyexpert.test;
+package com.policyexpert.test.stringutils;
 
 //todo: extract interface for different date formats
 //todo: create a parameter transform?
