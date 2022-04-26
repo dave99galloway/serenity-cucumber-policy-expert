@@ -15,6 +15,7 @@ public class AboutYou {
     public static final Target OccupationSearch = Target.the("occupation field").located(By.cssSelector("input[name='occupation']"));
     public static final Target PrimaryPhoneNumber = Target.the("Main phone number").located(By.cssSelector("input#primary_phone_number"));
     public static final Target CustomerEmail = Target.the("What is your e-mail address? field").located(By.cssSelector("input#customer_email"));
+    public static final Target Next = Target.the("Next button").located(By.cssSelector("div[class^='Sectionstyle__NavigationForward'] button[class^='styled__PrimaryButton']"));
 
     public static SearchableTarget getTitleButton(String title) {
         return Target.the(title).located(By.cssSelector(String.format("button[aria-label='%s']", title)));

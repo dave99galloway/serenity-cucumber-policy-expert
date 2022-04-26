@@ -88,4 +88,9 @@ public class HomeApplicationSteps {
         actor.attemptsTo(Enter.theValue(email).into(AboutYou.CustomerEmail));
 
     }
+
+    @And("{actor} clicks the Next button on the About You form")
+    public void clicksTheNextButtonOnTheAboutYouForm(Actor actor) {
+        actor.attemptsTo(Click.on(AboutYou.Next));
+    }
 }

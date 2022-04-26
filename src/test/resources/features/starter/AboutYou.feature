@@ -15,6 +15,7 @@ Feature: About you
     And "<actor>" has selected "<otherOccupations>" from the other occupations question
     And "<actor>" has entered "<phoneNumber>" as "<pronoun>" primary phone number
     And "<actor>" has entered "<email>" as "<pronoun>" email address
+    And "<actor>" clicks the Next button on the About You form
 
     Examples:
       | actor  | title | pronoun | lastname | dob        | maritalStatus |occupation|otherOccupations|phoneNumber|email|
