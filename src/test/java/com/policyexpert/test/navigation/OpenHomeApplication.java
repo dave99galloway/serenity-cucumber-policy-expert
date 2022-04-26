@@ -3,7 +3,6 @@ package com.policyexpert.test.navigation;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
-import starter.navigation.WikipediaHomePage;
 
 public class OpenHomeApplication {
     public static Performable page() {
