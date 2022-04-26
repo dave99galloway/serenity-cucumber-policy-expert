@@ -8,12 +8,16 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import kotlin.jvm.functions.Function1;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import com.policyexpert.test.about.AboutYouData;
+import net.serenitybdd.screenplay.ensure.PerformableExpectation;
+import org.jetbrains.annotations.NotNull;
 
 import static com.policyexpert.test.about.AboutYou.*;
+import static com.policyexpert.test.about.OtherResidents.CheckTheyAreOnTheOtherResidentsPage;
 
 public class HomeApplicationSteps {
 
@@ -24,13 +28,15 @@ public class HomeApplicationSteps {
 
     @Then("{actor} sees the About You form displayed")
     public void seesTheAboutYouFormDisplayed(Actor actor) {
-        actor.attemptsTo(Ensure.that(AboutYou.HEADING).hasText("1. About you"));
+        actor.attemptsTo(ChecksTheyAreOnTheAboutYouPage());
     }
 
     @Given("{actor} is on the About You form")
     public void isOnTheAboutYouForm(Actor actor) {
-        actor.attemptsTo(OpenHomeApplication.page(),Ensure.that(AboutYou.HEADING).hasText("1. About you"));
+        actor.attemptsTo(OpenHomeApplication.page(), ChecksTheyAreOnTheAboutYouPage());
     }
+
+
 
     @When("{actor} enters this data in the About You form:-")
     public void entersThisDataInTheAboutYouForm(Actor actor, AboutYouData data) {
@@ -95,7 +101,8 @@ public class HomeApplicationSteps {
 
     @Then("{actor} is redirected to the other residents page")
     public void isRedirectedToTheOtherResidentsPage(Actor actor) {
-        //todo: the selector for the headings is exactly the same on page 1 & 2 so some synchronisation may be needed to wait for the state change
-        actor.attemptsTo(Ensure.that(AboutYou.HEADING).hasText("2. About you and other residents"));
+        actor.attemptsTo(CheckTheyAreOnTheOtherResidentsPage());
     }
+
+
 }

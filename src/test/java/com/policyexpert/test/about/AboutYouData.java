@@ -7,15 +7,51 @@ import java.util.Map;
 
 public class AboutYouData {
 
-    private final String title;
-    private final String lastname;
-    private final DateFromString dob;
-    private final String maritalStatus;
-    private final String occupation;
-    private final String otherOccupations;
-    private final String phoneNumber;
-    private final String email;
-    private final String firstname;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setDob(DateFromString dob) {
+        this.dob = dob;
+    }
+
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public void setOtherOccupations(String otherOccupations) {
+        this.otherOccupations = otherOccupations;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    private  String title;
+    private  String lastname;
+    private  DateFromString dob;
+    private  String maritalStatus;
+    private  String occupation;
+    private  String otherOccupations;
+    private  String phoneNumber;
+    private  String email;
+    private  String firstname;
 
     public AboutYouData(Map<String, String> dataMap) {
         //todo: replace with conversion to/from json using object mapper
@@ -28,6 +64,19 @@ public class AboutYouData {
         this.otherOccupations = dataMap.get("otherOccupations");
         this.phoneNumber = dataMap.get("phoneNumber");
         this.email = dataMap.get("email");
+    }
+
+    public AboutYouData() {
+        //todo: get defaults from config!
+        this.title = "Mr";
+        this.firstname = "Trevor";
+        this.lastname = "McTrevor";
+        this.dob = new DateFromString( "10 12 1976");
+        this.maritalStatus = "Married";
+        this.occupation = "Journalist";
+        this.otherOccupations = "No";
+        this.phoneNumber = "07123456789";
+        this.email = "vketipisz@qmetric.co.uk";
     }
 
     public String getTitle() {
@@ -65,4 +114,7 @@ public class AboutYouData {
     public String getFirstname() {
         return firstname;
     }
+
+
+
 }

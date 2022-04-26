@@ -29,5 +29,9 @@ public class AboutYouTasks {
                     Click.on(AboutYou.Next)
             );
         }
+
+        public static Performable AboutYouData() {
+            return AboutYouData(new AboutYouData());
+        }
     }
 }

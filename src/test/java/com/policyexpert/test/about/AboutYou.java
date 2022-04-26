@@ -1,7 +1,12 @@
 package com.policyexpert.test.about;
 
+import kotlin.jvm.functions.Function1;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.ensure.PerformableExpectation;
 import net.serenitybdd.screenplay.targets.SearchableTarget;
 import net.serenitybdd.screenplay.targets.Target;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 
 public class AboutYou {
@@ -30,5 +35,10 @@ public class AboutYou {
     public static Target OtherOccupations(String otherOccupations) {
         return Target.the("Do you have another occupation as well?")
                 .located(By.cssSelector(String.format("button[aria-label='%s']", otherOccupations)));
+    }
+
+    @NotNull
+    public static PerformableExpectation<Function1<Actor, Comparable<String>>, String> ChecksTheyAreOnTheAboutYouPage() {
+        return Ensure.that(AboutYou.HEADING).hasText("1. About you");
     }
 }
